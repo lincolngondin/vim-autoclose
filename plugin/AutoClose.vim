@@ -451,8 +451,7 @@ endfunction
 
 function! s:CreateExtraMaps()
     " Extra mapping
-    inoremap <buffer> <silent> <BS>         <C-R>=<SID>Backspace()<CR>
-    inoremap <buffer> <silent> <Del>        <C-R>=<SID>Delete()<CR>
+    inoremap <buffer> <silent> <C-h>         <C-R>=<SID>Backspace()<CR>
     if b:AutoCloseExpandSpace
         inoremap <buffer> <silent> <Space>      <C-R>=<SID>Space()<CR>
     endif
@@ -519,9 +518,9 @@ if !exists("g:AutoClosePairs")
                 \ g:AutoClosePairs_del )
 endif
 
-let s:movementKeys = split('ESC UP DOWN LEFT RIGHT HOME END PAGEUP PAGEDOWN')
+let s:movementKeys = split('ESC HOME END PAGEUP PAGEDOWN')
 " list of keys that get mapped to themselves for pumvisible()
-let s:pumMovementKeys = split('UP DOWN PAGEUP PAGEDOWN')
+let s:pumMovementKeys = split('PAGEUP PAGEDOWN')
 
 
 if has("gui_macvim")
